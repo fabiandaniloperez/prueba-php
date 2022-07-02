@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Match;
 
 class Team extends Model
 {
@@ -23,6 +24,16 @@ class Team extends Model
     public function getTeamById($id)
     {
         return Team::find($id);
+    }
+
+    ///////////////////////////////////////////////////////////////////RELATIONSHIP///////////////////
+    public function matchHome()
+    {
+        return $this->hasMany(Match::class, 'hometeam_id');
+    }
+    public function matchAway()
+    {
+        return $this->hasMany(Match::class, 'awayteam_id');
     }
 
 }

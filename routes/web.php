@@ -21,5 +21,5 @@ Route::get('/', function () {
 //Route::get('/user', [UserController::class, 'index']);
 
 Route::resource('/partidos', '\App\Http\Controllers\MatchController');
-Route::get('/prueba', '\App\Http\Controllers\MatchController@prueba');
+Route::get('/consultar', '\App\Http\Controllers\MatchController@consultar')->name('consultar');
 //Route::resource('/partidos_champions', '\App\Http\Controllers\MatchController@champions');

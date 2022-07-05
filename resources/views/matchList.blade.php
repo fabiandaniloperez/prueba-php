@@ -4,6 +4,7 @@
 <div style="text-align: center" class="alert alert-success mt-5" role="alert">
     <h1>{{$liga['name']}} <img style="width: 70px; height: 70px;" src='{{$liga["flag"]}}'></h1>
     <h4>Partidos disputados desde: {{$dateFrom}} hasta: {{$dateTo}}</h4>
+    <a href="{{ route('consultar') }}" class="btn btn-success btn-sm">Cambiar fechas</a>
 </div>
 <div class="alert alert-success mt-5" role="alert">
     <table class="table">

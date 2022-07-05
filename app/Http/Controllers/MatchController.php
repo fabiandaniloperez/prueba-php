@@ -17,9 +17,16 @@ class MatchController extends Controller
         ]);
         $matchesArray = $matches->json();
         $matchesArrayMathches = $matchesArray["matches"];
-        $arreglo =["equpipo"=>"machester","equpipo1"=>"liverpoll"];
-        $liga="PREMIER LEAGUE";
-        return view('matchList', compact('arreglo','liga'));
+
+        //dd($matchesArrayMathches[0]);
+        $dateFrom = '2022-05-01';
+        $dateTo = '2022-05-31';
+
+
+        //$home=["equipo"=>"manchester","equipo1"=>"liverpoll"];
+        //$arreglo=["equipo"=>"manchester","equipo1"=>"liverpoll"];
+        $liga=["name"=>"PREMIER LEAGUE","flag"=>$matchesArrayMathches[0]["area"]["flag"]];
+        return view('matchList', compact('liga', 'matchesArrayMathches', 'dateFrom', 'dateTo'));
     }
 
     public function prueba(){
